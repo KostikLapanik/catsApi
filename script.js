@@ -1,11 +1,6 @@
-import { fetchCatData } from './modules/fetchData.js'
-import { drawImage } from './modules/fetchData.js';
+import { drawImage } from './modules/drawImage.js';
 
-let catUrl = localStorage.getItem('catImageUrl');
-
-if (catUrl) {
-    drawImage(catUrl);
-}
+drawImage();
 
 const generateButton = document.querySelector('.generate-button');
-generateButton.addEventListener('click', fetchCatData)
+generateButton.addEventListener('click', drawImage);

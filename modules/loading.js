@@ -1,5 +1,5 @@
 export function startLoading() {
-    const container = document.querySelector('.container');
+    const catWrapper = document.querySelector('.cat-wrapper');
 
     let newLoader = document.createElement('div');
     newLoader.classList.add('dot-spinner');
@@ -10,7 +10,7 @@ export function startLoading() {
         newLoader.append(newSpinnerDot);
     }
 
-    container.prepend(newLoader)
+    catWrapper.prepend(newLoader)
 }
 
 export function stopLoading() {

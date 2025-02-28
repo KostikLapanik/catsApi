@@ -1,9 +1,10 @@
 :root {
     --black-color: #333;
     --grey-color: #e7e7e7;
-    --uib-speed: .9s;
-    --uib-size: 2.8rem;
-    --uib-color: #183153;
+    --loader-speed: .9s;
+    --loader-size: 2.8rem;
+    --loader-color: #183153;
+    --cat-image-height: 400px
 }
 
 * {
@@ -45,8 +46,15 @@
     background: var(--grey-color);
 }
 
-.cat-image{
-    height: 400px;
+.cat-image {
+    height: var(--cat-image-height);
+}
+
+.cat-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--cat-image-height);
 }
 
 /* From Uiverse.io by abrahamcalsin */
@@ -56,10 +64,10 @@
     align-items: center;
     align-self: center;
     justify-content: flex-start;
-    height: var(--uib-size);
-    width: var(--uib-size);
-    width: 100px;
-    height: 100px;
+    height: var(--loader-size);
+    width: var(--loader-size);
+    width: 70px;
+    height: 70px;
     margin: auto;
 }
 
@@ -79,10 +87,10 @@
     height: 20%;
     width: 20%;
     border-radius: 50%;
-    background-color: var(--uib-color);
+    background-color: var(--loader-color);
     transform: scale(0);
     opacity: 0.5;
-    animation: pulse0112 calc(var(--uib-speed) * 1.111) ease-in-out infinite;
+    animation: pulse0112 calc(var(--loader-speed) * 1.111) ease-in-out infinite;
     box-shadow: 0 0 20px rgba(18, 31, 53, 0.3);
 }
 
@@ -91,7 +99,7 @@
 }
 
 .dot-spinner__dot:nth-child(2)::before {
-    animation-delay: calc(var(--uib-speed) * -0.875);
+    animation-delay: calc(var(--loader-speed) * -0.875);
 }
 
 .dot-spinner__dot:nth-child(3) {
@@ -99,7 +107,7 @@
 }
 
 .dot-spinner__dot:nth-child(3)::before {
-    animation-delay: calc(var(--uib-speed) * -0.75);
+    animation-delay: calc(var(--loader-speed) * -0.75);
 }
 
 .dot-spinner__dot:nth-child(4) {
@@ -107,7 +115,7 @@
 }
 
 .dot-spinner__dot:nth-child(4)::before {
-    animation-delay: calc(var(--uib-speed) * -0.625);
+    animation-delay: calc(var(--loader-speed) * -0.625);
 }
 
 .dot-spinner__dot:nth-child(5) {
@@ -115,7 +123,7 @@
 }
 
 .dot-spinner__dot:nth-child(5)::before {
-    animation-delay: calc(var(--uib-speed) * -0.5);
+    animation-delay: calc(var(--loader-speed) * -0.5);
 }
 
 .dot-spinner__dot:nth-child(6) {
@@ -123,7 +131,7 @@
 }
 
 .dot-spinner__dot:nth-child(6)::before {
-    animation-delay: calc(var(--uib-speed) * -0.375);
+    animation-delay: calc(var(--loader-speed) * -0.375);
 }
 
 .dot-spinner__dot:nth-child(7) {
@@ -131,7 +139,7 @@
 }
 
 .dot-spinner__dot:nth-child(7)::before {
-    animation-delay: calc(var(--uib-speed) * -0.25);
+    animation-delay: calc(var(--loader-speed) * -0.25);
 }
 
 .dot-spinner__dot:nth-child(8) {
@@ -139,7 +147,7 @@
 }
 
 .dot-spinner__dot:nth-child(8)::before {
-    animation-delay: calc(var(--uib-speed) * -0.125);
+    animation-delay: calc(var(--loader-speed) * -0.125);
 }
 
 @keyframes pulse0112 {
