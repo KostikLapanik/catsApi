@@ -23,10 +23,15 @@ export async function fetchCatImage() {
         const result = await responce.json();
 
         if (!result) {
-            throw new Error('Error in getting responce.text()')
+            throw new Error('Error in getting responce.json()!')
         }
 
         const catInfo = result[0];
+
+        if(!catInfo){
+            throw new Error('Error in catInfo!');
+        }
+
         return catInfo
     } catch (error) {
         console.error(error)
