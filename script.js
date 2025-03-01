@@ -1,4 +1,4 @@
-import { drawImage } from './modules/drawImage.js';
+import { drawImage } from './modules/index.js';
 
 drawImage();
 

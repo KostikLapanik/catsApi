@@ -5,9 +5,17 @@ import { setToLocalStorage } from './index.js';
 import { getFromLocalStorage } from './index.js';
 import { LOCAL_STORAGE_CAT_INFO_NAME } from './constants.js';
 
-const catWrapper = document.querySelector('.cat-wrapper');
+const catWrapper = document.querySelector('.cat-image-wrapper');
+const container = document.querySelector('.container');
+const closeButton = document.querySelector('.close-button');
+
 let catInfo;
 let oldCatImage;
+
+const catNameElem = document.querySelector('#cat-name');
+const catDescriptionElem = document.querySelector('#cat-description');
+const catLifeSpanElem = document.querySelector('#cat-life-span');
+const catWikipediaLink = document.querySelector('#cat-wikipedia-link');
 
 export async function drawImage() {
     oldCatImage = document.querySelector('.cat-image');
@@ -31,4 +39,23 @@ export async function drawImage() {
 
     stopLoading();
     catWrapper.append(newCatImage);
+
+    const breeds = catInfo.breeds[0];
+    const catName = breeds.name;
+    const catDescription = breeds.description;
+    const catLifeSpan = breeds.life_span;
+    const catWikipediaUrl = breeds.wikipedia_url;
+
+    catNameElem.innerText = catName;
+    catDescriptionElem.innerText = catDescription;
+    catLifeSpanElem.innerText = catLifeSpan;
+    catWikipediaLink.href = catWikipediaUrl;
+
+    newCatImage.addEventListener('dblclick', () => {
+        container.classList.add('active');
+    })
+
+    closeButton.addEventListener('click', () => {
+        container.classList.remove('active');
+    })
 }

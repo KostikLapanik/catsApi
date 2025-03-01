@@ -1,6 +1,6 @@
-export function startLoading() {
-    const catWrapper = document.querySelector('.cat-wrapper');
+const catWrapper = document.querySelector('.cat-image-wrapper');
 
+export function startLoading() {
     let newLoader = document.createElement('div');
     newLoader.classList.add('dot-spinner');
 

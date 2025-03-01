@@ -11,8 +11,21 @@
 <body>
     <div class="wrapper">
         <section class="container">
-            <div class="cat-wrapper"></div>
-            <button class="generate-button">Сгенерировать котика</button>
+            <div class="pop-up-elem" id="cat-info">
+                <p>Его имя: <em><span id="cat-name"></span></em></p>
+                <p>Описание: <em><span id="cat-description"></span></em></p>
+                <p>Продолжительность жизни: <span id="cat-life-span"></span> лет</p>
+                <a href="#" id="cat-wikipedia-link" target="_blank">Википедия</a>
+
+                <div class="close-button">
+                    <span class="close-icon"></span>
+                </div>
+            </div>
+
+            <div class="cat-info-wrapper">
+                <div class="cat-image-wrapper"></div>
+                <button class="generate-button">Сгенерировать котика</button>
+            </div>
         </section>
     </div>
 
